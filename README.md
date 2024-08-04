@@ -1,2 +1,2 @@
 # Sneakycks
-# A basic e-commerce website for reselling exclusive shoes
+A basic e-commerce website for reselling exclusive shoes
