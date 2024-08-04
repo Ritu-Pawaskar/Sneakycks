@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Razorpay Integration</title>
+</head>
+<body>
+    <h1>Enter Amount to Pay:</h1>
+    <form action="/charge" method="POST">
+        <br>
+        <input type="number" name="amount" value={{amt}} readonly>
+        <button type="submit">Pay Now</button>
+    </form>
+</body>
+</html>

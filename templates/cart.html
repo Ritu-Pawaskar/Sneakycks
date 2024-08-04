@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sneakycks</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='cart.css')}}" />
+    </head>
+    <body>
+        <div class="navbar">
+            <img src="{{url_for('static',filename='pixel palette.png')}}" alt="logo" />
+            <h2 id="h2">Sneakycks</h2>
+            <ul>
+                <li><a href="{{url_for('homee')}}">Home</a></li>
+                <li><a href="{{url_for('aboutt')}}">Products</a></li>
+                <li><a href="{{url_for('createe')}}">About us</a></li>
+                <li><a href="{{url_for('index')}}">Customers</a></li>
+                <li><a href="#">Sign Out</a></li>
+            </ul>
+            <!-- <div class="icons">
+                <div class="dropdown">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/xfftupfv.json"
+                        trigger="hover"
+                        colors="primary:black"
+                        style="width:30px;height:30px"
+                    ></lord-icon>
+                    <div class="dropdown-content">
+                         Add your search bar input here -->
+                        <!-- <input type="text" placeholder="Search..." /> -->
+                        <!-- You can add more items or links here -->
+                        <!-- <a href="#">Abstract</a>
+                        <a href="#">thumbnails</a>
+                        <a href="#">Vector art</a>
+                    </div>
+                </div>
+                <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                <lord-icon
+                    src="https://cdn.lordicon.com/hyhnpiza.json"
+                    trigger="hover"
+                    colors="primary:black"
+                    style="width:30px;height:30px"
+                ></lord-icon>
+            </div> -->
+        <!-- </div> --> 
+
+        <!---cart item details-->
+        <div class="small-container cart-page">
+            <table>
+                <tr>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="{{url_for('static',filename='AG.jpg')}}" alt="Product Image" />
+                            <div id = "cart-details">
+                                <!-- <h3>Mysterious Man</h3>
+                                <p>Vector Art</p>
+                                <small>Price: $50.00</small>
+                                <a href="#">Remove</a> -->
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" value="1" id="quantity" onchange="calculateTotal()" />
+                    </td>
+                    <td id="subtotal">$50.00</td>
+                </tr>
+            </table>
+            <form action="/paymentt" method="post">
+            <div class="total-price">
+                
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td id="subtotal"></td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td id="tax">$5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td id="total">${{price}}</td>
+                        <input type="hidden" name="finalamount" value="{{price}}">
+                    </tr>
+                </table>
+                
+                <button id="checkout-button" class="checkout-button">Proceed to Checkout</button>
+            
+            </div>
+            </form>
+            
+        </div>
+        <script>
+            function getQueryParams() {
+            var params = {};
+            var queryString = window.location.search.substring(1);
+            var paramArray = queryString.split("&");
+            for (var i = 0; i < paramArray.length; i++) {
+                var pair = paramArray[i].split("=");
+                params[pair[0]] = decodeURIComponent(pair[1]);
+            }
+            return params;
+        }
+
+        // Get query parameters from the URL
+        var queryParams = getQueryParams();
+        
+        // Display received details in cart-details div
+        var cartDetailsDiv = document.getElementById('cart-details');
+        cartDetailsDiv.innerHTML = `<h3>Art Name: ${queryParams.artname}</h3>
+                                    <p>Art Category: ${queryParams.artCategory}</p>
+                                    <small id = "price">Price: $${queryParams.price}</small>`;
+
+        var subtotal = document.getElementById('subtotal');
+        subtotal.textContent = $queryParams.price;
+        
+
+        </script>
+        <script>
+            function calculateTotal() {
+                const pricePerItem = parseFloat(document.getElementById('price').value);  // Set the price per item
+                const quantity = parseInt(document.getElementById('quantity').value);
+                const subtotal = pricePerItem * quantity;
+                const taxRate = 0.10;  // 10% tax rate
+                const tax = subtotal * taxRate;
+                const total = subtotal + tax;
+        
+                // Update the subtotal, tax, and total elements
+                document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+                document.getElementById('tax').textContent = '$' + tax.toFixed(2);
+                document.getElementById('total').textContent = '$' + total.toFixed(2);
+            }
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakycks</title>
+
+    <!-- To Link CSS FILE -->
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+    <!-- TO Link BOXICON Icons -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- To Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Prompt:wght@600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <header id="Sneakycks">
+        <a href="#landing_page" class="shoe_logo">
+            <img src="{{url_for('static',filename='logo.png')}}" alt="Sneakycks">
+        </a>
+
+        <!-- Menu Bar -->
+        <i class='bx bx-menu' id="hamburg_icon"></i>
+
+        <!-- To Add Headings -->
+        <ul class="navbar">
+            <li><a href="#landing_page">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about-page">About us</a></li>
+            <li><a href="#customers">Customers</a></li>
+            <li><a href="{{url_for('loginn')}}">Login</a></li>
+            <li><a href="{{url_for('cartt')}}"><i class='bx bxs-cart'></i></li>
+        </ul>
+
+        <div class="header_icon">
+            <!-- Cart Icon -->
+            <i class='bx bxs-cart'></i>
+        </div>
+
+    </header>
+
+    <!-- Landing Page -->
+
+    <section class="home" id="landing_page">
+        <div class="home_page_text">
+            <h1>The journey <span>begins</span> with perfect pair</h1>
+            <p>Forget lengthy sneaker hunts and overpriced resale markets.
+               Explore SNEAKYCKS curated collection for the freshest styles and rarest finds. 
+               Our experts handpick each pair,ensuring quality and authenticity.
+            </p>
+            <a href="#about-page" class="button">More Articles</a>
+        </div>
+
+        <div class="home_image">
+            <img src="{{url_for('static',filename='shoe.png')}}" alt="">
+        </div>
+    </section>
+
+    <!-- Products Section -->
+
+    <section class="products" id="products">
+        <div class="heading">
+            <h2>Trending Products</h2>
+        </div>
+
+        <!-- Container  -->
+
+        <div class="products-container">
+            <div class="box">
+                <img src="{{url_for('static',filename='air-plus.png')}}" alt="">
+                <h3>Nike air plus</h3>
+                <div class="content">
+                    <span>$1500</span>
+                    <a href="{{url_for('cartt',price='1500')}}">Add To Cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{url_for('static',filename='adidasbadbunny.png')}}" alt="">
+                <h3>Adidas bad bunny</h3>
+                <div class="content">
+                    <span>$1800</span>
+                    <a href="{{url_for('cartt',price='1800')}}">Add To Cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{url_for('static',filename='onitsukatigerbrucelee.png')}}" alt="">
+                <h3>Onitsuka Tiger Bruce-Lee edition</h3>
+                <div class="content">
+                    <span>$1000</span>
+                    <a href="{{url_for('cartt',price='1000')}}">Add To Cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{url_for('static',filename='Louis-Vuitton-Shoes.png')}}" alt="">
+                <h3>Louis Vuitton</h3>
+                <div class="content">
+                    <span>$2500</span>
+                    <a href="{{url_for('cartt',price='2500')}}">Add To Cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{url_for('static',filename='nikeshoe.png')}}" alt="">
+                <h3>Nike Jordan</h3>
+                <div class="content">
+                    <span>$2200</span>
+                    <a href="{{url_for('cartt',price='2200')}}">Add To Cart</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{url_for('static',filename='shoe-6.jpg')}}" alt="">
+                <h3>Nike Trainner</h3>
+                <div class="content">
+                    <span>$800</span>
+                    <a href="{{url_for('cartt',price='800')}}">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  About Section -->
+    <section class="about-page" id="about-page">
+        <div class="about-img">
+            <img src="{{url_for('static',filename='about-img.jpg')}}" alt="">
+        </div>
+
+        <div class="about-text">
+            <h2>Our Company</h2>
+            <p class="paragraph">
+                Ready to elevate your sneaker game? SNEAKYCKS specializes in the rarest and most coveted kicks. 
+                From limited-edition Yeezys to retro Jordans, 
+                we have got you covered.
+            </p>
+            <p class="paragraph">
+                Unleash your inner sneakerhead with our exclusive collection of rare, unique, and fashionable sneakers.
+                Step back in time with retro kicks that never go out of style. Discover timeless designs with a modern twist.
+            </p>
+            <a href="" class="button">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Customers Section -->
+
+    <section class="customers" id="customers">
+        <div class="heading">
+            <h1>Our Customers</h1>
+        </div>
+
+        <!-- Conatiners -->
+        <div class="customers-container">
+            <div class="box">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p>Virat Kohli is an Indian international cricketer and the former captain of the Indian national cricket team. 
+                   Widely regarded as one of the greatest batsmen in the history of the sport, 
+                   he plays for Royal Challengers Bangalore in the IPL and Delhi in domestic cricket.
+                </p>
+                <h2>Virat Kohli</h2>
+                <img src="{{url_for('static',filename='vk.jpg')}}" alt="">
+            </div>
+
+            <div class="box">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p>Ranvijay Singh is an Indian actor, television personality and VJ.
+                   Ranvijay is known for his appearance in MTV Roadies, 
+                   where he won the show. He was a part of the show from 2004 to 2020, earlier as a gang leader and then as a host.
+                </p>
+                <h2>Ranvijay Singh</h2>
+                <img src="{{url_for('static',filename='ranvijay.jpeg')}}" alt="">
+            </div>
+
+            <div class="box">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p> Vicky Kaushal is an Indian actor who works in Hindi films. He is the recipient of numerous accolades, 
+                    including a National Film Award and two Filmfare Awards, 
+                    and has appeared in Forbes India's Celebrity 100 list of 2019. 
+                </p>
+                <h2>Vicky Kaushal</h2>
+                <img src="{{url_for('static',filename='vicky.jpg')}}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Footer -->
+
+    <section class="footer">
+        <div class="footer-box">
+            <h2>SNEAKYCKS</h2>
+            <p>The ultimate hub for sneaker enthusiasts around the world! Our curated selection features limited-edition kicks
+               that are so rare, 
+                you would not find them anywhere else.
+            </p>
+            <div class="social">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-twitter' ></i>
+                <i class='bx bxl-instagram' ></i>
+                <i class='bx bxl-youtube' ></i>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h2>Support</h2>
+            
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Help</a></li>
+            
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">Return Policy</a></li>
+        </div>
+        <div class="footer-box">
+            <h2>About</h2>
+            <li><a href="#">Become a Seller</a></li>
+            <li><a href="#">Warranty Policy</a></li>
+            <li><a href="#">Our Branches</a></li>
+        </div>
+
+        <div class="footer-box">
+            <h2>Contact-Us</h2>
+            <div class="contact">
+                <span><i class='bx bxs-map'></i>MG road, opp-McDonald, Borivali(W), Mumbai</span>
+                <span><i class='bx bxs-phone'></i>7070889090</span>
+                <span><i class='bx bxl-gmail' ></i>Sneakycks@gmail.com</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Section -->
+
+    <div class="copyright">
+        <p>&#169; Sneakycks All Right Reserved </p>
+    </div>
+
+    <!-- Javascript -->
+
+    <script type="text/Javascript">
+
+    let navbar =document.querySelector('.navbar');
+    document.querySelector('#hamburg_icon').onclick=()=>{
+        navbar.classList.toggle('active');
+    }
+
+    window.onscroll=()=>{
+        navbar.classlist.remove('active');
+    }
+
+    </script>
+</body>
+</html>
